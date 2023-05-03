@@ -35,7 +35,7 @@ resource "aws_security_group" "monitor_sg" {
     from_port   = 8
     to_port     = 0
     protocol    = "icmp"
-    cidr_blocks = ["52.90.95.154/32"]
+    cidr_blocks = ["54.163.62.232/32"]
   }
 
   # Allow all SSH External
@@ -43,7 +43,7 @@ resource "aws_security_group" "monitor_sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "TCP"
-    cidr_blocks = ["52.90.95.154/32"]
+    cidr_blocks = ["54.163.62.232/32", "79.182.179.3/32"]
   }
 
   # Allow all traffic to HTTP port 3000
@@ -51,7 +51,7 @@ resource "aws_security_group" "monitor_sg" {
     from_port   = 3000
     to_port     = 3000
     protocol    = "TCP"
-    cidr_blocks = ["52.90.95.154/32"]
+    cidr_blocks = ["54.163.62.232/32", "79.182.179.3/32"]
   }
 
   # Allow all traffic to HTTP port 9090
@@ -59,7 +59,7 @@ resource "aws_security_group" "monitor_sg" {
     from_port   = 9090
     to_port     = 9090
     protocol    = "TCP"
-    cidr_blocks = ["52.90.95.154/32"]
+    cidr_blocks = ["54.163.62.232/32", "79.182.179.3/32"]
   }
 
   # Allow all traffic to HTTP port 9090
@@ -67,14 +67,7 @@ resource "aws_security_group" "monitor_sg" {
     from_port   = 8080
     to_port     = 8080
     protocol    = "TCP"
-    cidr_blocks = ["77.137.77.185/32"]
-  }
-
-  ingress {
-    from_port   = 3000
-    to_port     = 3000
-    protocol    = "TCP"
-    cidr_blocks = ["77.137.77.185/32"]
+    cidr_blocks = ["77.137.77.185/32", "79.182.179.3/32"]
   }
 }
 
